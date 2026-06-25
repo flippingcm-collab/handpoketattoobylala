@@ -291,6 +291,8 @@ header.scrolled .navbar{
     width:100%;
     height:100dvh;
 
+     background:rgba(9,9,9,.97);
+
     display:flex;
     flex-direction:column;
 
