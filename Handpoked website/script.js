@@ -832,6 +832,19 @@ document.querySelector(".booking-modal");
 const closeBooking =
 document.querySelector(".close-booking");
 
+const bookingLinks =
+document.querySelectorAll(".close-booking-modal");
+
+bookingLinks.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        closeModal(bookingModal);
+
+    });
+
+});
+
 bookingInfoBtn.addEventListener("click",(e)=>{
 
     e.preventDefault();
