@@ -1357,6 +1357,10 @@ LIGHTBOX
 
     gap:60px;
 
+    padding:90px 24px 40px;
+
+    overflow-y:auto;
+
     opacity:0;
     visibility:hidden;
 
@@ -1365,7 +1369,6 @@ LIGHTBOX
     z-index:9000;
 
 }
-
 .lightbox.active{
 
     opacity:1;
@@ -1440,14 +1443,18 @@ LIGHTBOX
 
 .lightbox-close{
 
-    position:absolute;
+    position:fixed;
 
-    top:40px;
-    right:50px;
+    top:20px;
+    right:20px;
 
-    font-size:50px;
+    font-size:42px;
 
     cursor:pointer;
+
+    z-index:9001;
+
+    transition:.3s;
 
 }
 
@@ -4376,6 +4383,28 @@ blockquote::after{
         right:24px;
 
     }
+
+     .lightbox{
+
+        align-items:flex-start;
+
+        padding-top:80px;
+
+    }
+
+    #lightbox-image{
+
+        max-height:60vh;
+
+    }
+
+    .prev-btn,
+    .next-btn{
+
+        font-size:48px;
+
+    }
+
 
 }
 /* ==========================
