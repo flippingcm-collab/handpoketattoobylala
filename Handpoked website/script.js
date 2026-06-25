@@ -41,6 +41,28 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
 
 });
+
+/*=========================================
+MOBILE MENU
+=========================================*/
+
+function openModal(modal){
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+function closeModal(modal){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
 /*=========================================
 MOBILE MENU
 =========================================*/
@@ -192,8 +214,7 @@ document.querySelectorAll(".gallery-filter button");
 // OPEN MODAL
 openGallery.addEventListener("click",()=>{
 
-    galleryModal.classList.add("active");
-        document.body.style.overflow = "hidden";
+openModal(galleryModal);
 
     renderGallery("all");
 
@@ -202,9 +223,7 @@ openGallery.addEventListener("click",()=>{
 // CLOSE MODAL
 closeGallery.addEventListener("click",()=>{
 
-    galleryModal.classList.remove("active");
-
-    document.body.style.overflow = "";
+closeModal(galleryModal);
 
 });
 /*=========================================
@@ -522,8 +541,7 @@ if(e.key==="Escape" && lalaModal.classList.contains("active")){
 
     if(e.key==="Escape" && galleryModal.classList.contains("active")){
 
-        galleryModal.classList.remove("active");
-        document.body.style.overflow = "";
+     closeModal(galleryModal);
 
         return;
     }
@@ -539,9 +557,7 @@ if(e.key==="Escape" && lalaModal.classList.contains("active")){
     if(e.key==="Escape" &&
 bookingModal.classList.contains("active")){
 
-    bookingModal.classList.remove("active");
-
-    document.body.style.overflow="";
+   closeModal(bookingModal);
 
     return;
 
@@ -599,25 +615,37 @@ document.querySelector(".lala-modal");
 const closeLala =
 document.querySelector(".close-lala");
 
+const lalaLinks =
+document.querySelectorAll(".lala-buttons a");
+
+lalaLinks.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        closeModal(lalaModal);
+
+    });
+
+});
+
 
 // OPEN
 
-meetLalaBtn.addEventListener("click",()=>{
+meetLalaBtn.addEventListener("click",(e)=>{
 
-    lalaModal.classList.add("active");
+    e.preventDefault();
 
-    document.body.style.overflow="hidden";
+    openModal(lalaModal);
 
 });
+
 
 
 // CLOSE
 
 closeLala.addEventListener("click",()=>{
 
-    lalaModal.classList.remove("active");
-
-    document.body.style.overflow = "";
+closeModal(lalaModal);
 
 });
 
@@ -628,8 +656,7 @@ lalaModal.addEventListener("click",(e)=>{
 
     if(e.target===lalaModal){
 
-        lalaModal.classList.remove("active");
-        document.body.style.overflow = "";
+        closeModal(lalaModal);
 
     }
 
@@ -809,17 +836,13 @@ bookingInfoBtn.addEventListener("click",(e)=>{
 
     e.preventDefault();
 
-    bookingModal.classList.add("active");
-
-    document.body.style.overflow="hidden";
+  openModal(bookingModal);
 
 });
 
 closeBooking.addEventListener("click",()=>{
 
-    bookingModal.classList.remove("active");
-
-    document.body.style.overflow="";
+    closeModal(bookingModal);
 
 });
 
@@ -827,9 +850,7 @@ bookingModal.addEventListener("click",(e)=>{
 
     if(e.target===bookingModal){
 
-        bookingModal.classList.remove("active");
-
-        document.body.style.overflow="";
+        closeModal(bookingModal);
 
     }
 
@@ -842,9 +863,7 @@ if(bookingLink){
 
     bookingLink.addEventListener("click",()=>{
 
-        bookingModal.classList.remove("active");
-
-        document.body.style.overflow="";
+       closeModal(bookingModal);
 
     });
 
